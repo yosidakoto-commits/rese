@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>株式会社RESE | 日本の原風景と未来技術で、持続可能な社会を再生する。</title>
+<meta name="description" content="車中泊インフラ整備、再生可能エネルギー導入、SDGs推進、古民家・空き家再生、資産再活用を通じて地域と社会の持続可能な未来を創造する株式会社RESEの公式サイト。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --w:#ffffff;
+  --blk:#000000;
+  --dk:#1d1d1f;
+  --g1:#f5f5f7;
+  --g2:#e8e8ed;
+  --g4:#86868b;
+  --g6:#515154;
+  --grn:#1a7a4a;
+  --grn-l:#e8f5ee;
+  --grn-a:#2ecc71;
+  --earth:#7c5c3a;
+  --sky:#0a84ff;
+  --sun:#f5a623;
+  --nav-h:52px;
+  --r:18px;
+  --rs:10px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans JP','Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--w);color:var(--dk);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1.2rem,4vw,3.5rem);background:rgba(255,255,255,0.75);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border-bottom:.5px solid rgba(0,0,0,0.08);transition:background .3s}
+.logo{font-family:'Inter',sans-serif;font-weight:800;font-size:1.25rem;letter-spacing:-.04em;color:var(--dk);text-decoration:none}
+.logo span{color:var(--grn)}
+.nav-links{display:flex;gap:clamp(1rem,2.5vw,2rem);list-style:none}
+.nav-links a{font-size:.8rem;font-weight:400;color:var(--g6);text-decoration:none;letter-spacing:.01em;transition:color .2s}
+.nav-links a:hover{color:var(--dk)}
+.nav-btn{font-size:.8rem;font-weight:500;color:var(--w);background:var(--dk);padding:.4rem 1.1rem;border-radius:20px;text-decoration:none;transition:background .2s,transform .15s;white-space:nowrap}
+.nav-btn:hover{background:#333;transform:translateY(-1px)}
+.ham{display:none;cursor:pointer;flex-direction:column;gap:5px}
+.ham span{display:block;width:22px;height:1.5px;background:var(--dk);transition:all .3s}
+.mob-nav{display:none;position:fixed;top:var(--nav-h);left:0;right:0;background:rgba(255,255,255,.97);backdrop-filter:blur(20px);padding:1.5rem 2rem;flex-direction:column;gap:1.25rem;border-bottom:.5px solid rgba(0,0,0,.08);z-index:199}
+.mob-nav.open{display:flex}
+.mob-nav a{font-size:1rem;color:var(--dk);text-decoration:none}
+
+/* ── HERO ── */
+#hero{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:calc(var(--nav-h) + 4rem) clamp(1.2rem,5vw,4rem) 5rem;background:var(--w);position:relative;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:.15;pointer-events:none}
+.orb1{width:700px;height:700px;background:radial-gradient(circle,#2ecc71,transparent);top:-150px;right:-150px}
+.orb2{width:500px;height:500px;background:radial-gradient(circle,#f5a623,transparent);bottom:-100px;left:-100px}
+.orb3{width:400px;height:400px;background:radial-gradient(circle,#0a84ff,transparent);top:40%;left:60%}
+.badge{display:inline-flex;align-items:center;gap:.5rem;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--grn);background:var(--grn-l);padding:.35rem 1rem;border-radius:20px;margin-bottom:1.75rem;opacity:0;animation:fadeUp .7s .2s ease forwards}
+.badge::before{content:'';width:6px;height:6px;background:var(--grn);border-radius:50%}
+h1.hero-h{font-size:clamp(2rem,5.5vw,4.5rem);font-weight:800;line-height:1.1;letter-spacing:-.035em;color:var(--dk);max-width:860px;margin-bottom:1.5rem;opacity:0;animation:fadeUp .7s .35s ease forwards}
+h1.hero-h em{font-style:normal;background:linear-gradient(135deg,var(--grn),var(--sun));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:clamp(.95rem,1.8vw,1.15rem);font-weight:300;line-height:1.8;color:var(--g6);max-width:620px;margin-bottom:2.5rem;opacity:0;animation:fadeUp .7s .5s ease forwards}
+.hero-acts{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;opacity:0;animation:fadeUp .7s .65s ease forwards}
+.btn-p{display:inline-flex;align-items:center;gap:.4rem;font-size:.9375rem;font-weight:500;color:var(--w);background:var(--dk);padding:.75rem 1.75rem;border-radius:980px;text-decoration:none;transition:background .2s,transform .15s}
+.btn-p:hover{background:#333;transform:translateY(-2px)}
+.btn-s{display:inline-flex;align-items:center;gap:.4rem;font-size:.9375rem;font-weight:400;color:var(--grn);background:transparent;border:1px solid rgba(26,122,74,.3);padding:.75rem 1.75rem;border-radius:980px;text-decoration:none;transition:all .2s}
+.btn-s:hover{background:var(--grn-l);border-color:var(--grn);transform:translateY(-2px)}
+.hero-chips{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin-top:3rem;opacity:0;animation:fadeUp .7s .8s ease forwards}
+.chip{font-size:.75rem;font-weight:500;padding:.3rem .85rem;border-radius:20px;border:.5px solid var(--g2);color:var(--g6);background:var(--g1)}
+
+/* ── SECTION COMMONS ── */
+section{padding:clamp(4rem,8vw,7rem) clamp(1.2rem,5vw,4rem)}
+.eyebrow{font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--grn);margin-bottom:.75rem}
+h2.sec-title{font-size:clamp(1.7rem,3.5vw,2.75rem);font-weight:800;letter-spacing:-.035em;line-height:1.12;color:var(--dk);margin-bottom:1rem}
+.sec-desc{font-size:1.0625rem;font-weight:300;line-height:1.8;color:var(--g6);max-width:580px;margin-bottom:3rem}
+.inner{max-width:1200px;margin:0 auto}
+
+/* ── BUSINESS GRID ── */
+#business{background:var(--g1)}
+.biz-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:1.25rem}
+.biz-card{background:var(--w);border-radius:var(--r);padding:2.25rem 2rem;border:.5px solid var(--g2);transition:transform .25s,box-shadow .25s;position:relative;overflow:hidden;opacity:0;transform:translateY(28px)}
+.biz-card.vis{opacity:1;transform:translateY(0);transition:opacity .6s ease,transform .6s ease,box-shadow .25s}
+.biz-card:hover{transform:translateY(-5px);box-shadow:0 24px 64px rgba(0,0,0,.08)}
+.biz-card::after{content:'';position:absolute;inset:0;border-radius:var(--r);border:1px solid transparent;transition:border-color .3s;pointer-events:none}
+.biz-card:hover::after{border-color:rgba(26,122,74,.18)}
+.card-icon{width:52px;height:52px;display:flex;align-items:center;justify-content:center;border-radius:14px;margin-bottom:1.5rem;font-size:1.5rem}
+.ic1{background:#fef3e2}.ic2{background:#e8f5ee}.ic3{background:#e8f0fe}.ic4{background:#fce4ec}.ic5{background:#e3f2fd}
+.card-no{font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--g4);margin-bottom:.5rem}
+.card-title{font-size:1.2rem;font-weight:700;letter-spacing:-.02em;color:var(--dk);margin-bottom:.75rem;line-height:1.3}
+.card-desc{font-size:.875rem;font-weight:300;line-height:1.85;color:var(--g6);margin-bottom:1.75rem}
+.card-tags{display:flex;flex-wrap:wrap;gap:.4rem}
+.tag{font-size:.68rem;font-weight:500;padding:.25rem .65rem;border-radius:12px}
+.tg{background:var(--grn-l);color:var(--grn)}
+.te{background:#fef3e2;color:#a05e00}
+.tb{background:#e8f0fe;color:#1a56db}
+.tp{background:#fce4ec;color:#b71c5d}
+
+/* ── SPOTLIGHT ── */
+#spotlight{background:var(--dk);color:var(--w);position:relative;overflow:hidden}
+.sp-bg{position:absolute;inset:0;background:radial-gradient(ellipse 55% 70% at 80% 50%,rgba(26,122,74,.28),transparent);pointer-events:none}
+.sp-inner{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:center;position:relative;z-index:1}
+.sp-eyebrow{font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--grn-a);margin-bottom:.75rem}
+h2.sp-title{font-size:clamp(1.7rem,3vw,2.75rem);font-weight:800;letter-spacing:-.035em;line-height:1.12;color:var(--w);margin-bottom:1.25rem}
+.sp-desc{font-size:.975rem;font-weight:300;line-height:1.85;color:rgba(255,255,255,.62);margin-bottom:2rem}
+.sp-link{display:inline-flex;align-items:center;gap:.4rem;font-size:.9375rem;font-weight:500;color:var(--grn-a);text-decoration:none;transition:gap .2s}
+.sp-link:hover{gap:.7rem}
+.sp-vis{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.vc{background:rgba(255,255,255,.05);border:.5px solid rgba(255,255,255,.1);border-radius:var(--rs);padding:1.25rem;backdrop-filter:blur(10px);transition:background .25s,transform .25s}
+.vc:hover{background:rgba(255,255,255,.09);transform:translateY(-3px)}
+.vc.wide{grid-column:span 2}
+.vc-lbl{font-size:.68rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.5rem}
+.vc-val{font-family:'Inter',sans-serif;font-size:1.5rem;font-weight:800;letter-spacing:-.04em;color:var(--w)}
+.vc-sub{font-size:.75rem;color:rgba(255,255,255,.5);margin-top:.2rem}
+.vc-bar-w{margin-top:.75rem;height:4px;background:rgba(255,255,255,.1);border-radius:2px;overflow:hidden}
+.vc-bar{height:100%;border-radius:2px;background:var(--grn-a);transition:width 1.5s ease;width:0}
+
+/* ── SDGs ── */
+#sdgs{background:var(--w)}
+.sdgs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin-top:2.5rem}
+.sdg-item{border-radius:var(--rs);padding:1.5rem;display:flex;flex-direction:column;gap:.75rem;transition:transform .2s,box-shadow .2s}
+.sdg-item:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.08)}
+.sdg-num{font-family:'Inter',sans-serif;font-size:2rem;font-weight:900;letter-spacing:-.06em}
+.sdg-name{font-size:.9rem;font-weight:700;line-height:1.3}
+.sdg-desc{font-size:.8rem;font-weight:300;line-height:1.7;color:var(--g6)}
+.s1{background:#fef9ec}.s2{background:#e8f5ee}.s3{background:#e3f2fd}.s4{background:#fce4ec}.s5{background:#f3e8ff}.s6{background:#e0f7fa}
+
+/* ── COMPANY ── */
+#company{background:var(--g1)}
+.co-inner{display:grid;grid-template-columns:1fr 1.4fr;gap:clamp(2rem,5vw,5rem);align-items:start}
+.co-tbl{border:.5px solid var(--g2);border-radius:var(--r);overflow:hidden;width:100%}
+.co-tbl table{width:100%;border-collapse:collapse;font-size:.9rem}
+.co-tbl tr{border-bottom:.5px solid var(--g2);transition:background .15s}
+.co-tbl tr:last-child{border-bottom:none}
+.co-tbl tr:hover{background:rgba(26,122,74,.04)}
+.co-tbl th{padding:1rem 1.25rem;text-align:left;font-weight:500;color:var(--g6);font-size:.78rem;width:34%;vertical-align:top;white-space:nowrap;background:var(--w)}
+.co-tbl td{padding:1rem 1.25rem 1rem 0;color:var(--dk);font-weight:400;line-height:1.65}
+.val-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.val-card{background:var(--w);border-radius:var(--rs);padding:1.5rem;transition:transform .2s;border:.5px solid var(--g2)}
+.val-card:hover{transform:translateY(-3px)}
+.val-num{font-family:'Inter',sans-serif;font-size:1.75rem;font-weight:800;letter-spacing:-.05em;color:var(--dk)}
+.val-num sup{color:var(--grn);font-size:.9rem}
+.val-txt{font-size:.78rem;color:var(--g6);margin-top:.3rem;line-height:1.55}
+
+/* ── CONTACT ── */
+#contact{background:var(--w)}
+.ct-inner{max-width:680px;margin:0 auto;text-align:center}
+.ct-inner .sec-desc{margin:0 auto 2.5rem}
+.ct-form{background:var(--g1);border-radius:var(--r);padding:clamp(1.75rem,4vw,3rem);border:.5px solid var(--g2);text-align:left}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.fg{display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.25rem}
+.fg label{font-size:.8125rem;font-weight:500;color:var(--dk)}
+.fg input,.fg select,.fg textarea{width:100%;font-family:'Noto Sans JP',sans-serif;font-size:.9375rem;font-weight:400;color:var(--dk);background:var(--w);border:1px solid transparent;border-radius:var(--rs);padding:.75rem 1rem;outline:none;transition:border-color .2s,box-shadow .2s;resize:none;appearance:none;-webkit-appearance:none}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:rgba(26,122,74,.4);box-shadow:0 0 0 3px rgba(26,122,74,.08)}
+.fg textarea{height:130px}
+.sub-btn{width:100%;font-family:'Noto Sans JP',sans-serif;font-size:.9375rem;font-weight:500;color:var(--w);background:var(--dk);border:none;border-radius:980px;padding:.875rem;cursor:pointer;transition:background .2s,transform .15s;margin-top:.5rem}
+.sub-btn:hover{background:#333;transform:translateY(-1px)}
+.form-ok{display:none;text-align:center;padding:2rem;color:var(--grn);font-size:1rem;font-weight:500;line-height:1.7}
+
+/* ── FOOTER ── */
+footer{background:var(--dk);color:rgba(255,255,255,.5);padding:4rem clamp(1.2rem,5vw,4rem) 2.5rem}
+.ft-inner{max-width:1200px;margin:0 auto}
+.ft-top{display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:clamp(1.5rem,3vw,3rem);padding-bottom:3rem;border-bottom:.5px solid rgba(255,255,255,.1);margin-bottom:2rem}
+.ft-brand .logo{display:block;margin-bottom:.75rem;font-size:1.25rem;color:var(--w)}
+.ft-brand p{font-size:.8rem;line-height:1.75;max-width:240px}
+.ft-col h4{font-size:.8rem;font-weight:600;color:var(--w);margin-bottom:1rem}
+.ft-col ul{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+.ft-col a{font-size:.78rem;color:rgba(255,255,255,.45);text-decoration:none;transition:color .2s}
+.ft-col a:hover{color:rgba(255,255,255,.85)}
+.ft-btm{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.ft-btm p,.ft-langs a{font-size:.76rem}
+.ft-langs{display:flex;gap:1rem}
+.ft-langs a{color:rgba(255,255,255,.45);text-decoration:none;transition:color .2s}
+.ft-langs a:hover{color:rgba(255,255,255,.85)}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.rev{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+.rev.vis{opacity:1;transform:translateY(0)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .sp-inner,.co-inner{grid-template-columns:1fr}
+  .ft-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  .nav-links,.nav-btn{display:none}
+  .ham{display:flex}
+  .row2{grid-template-columns:1fr}
+  .ft-top{grid-template-columns:1fr}
+  .sp-vis{grid-template-columns:1fr}
+  .vc.wide{grid-column:span 1}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">RESE<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#business">事業内容</a></li>
+    <li><a href="#spotlight">地域創生</a></li>
+    <li><a href="#sdgs">SDGs</a></li>
+    <li><a href="#company">会社概要</a></li>
+    <li><a href="#contact">お問い合わせ</a></li>
+  </ul>
+  <a href="#contact" class="nav-btn">お問い合わせ</a>
+  <div class="ham" id="ham"><span></span><span></span><span></span></div>
+</nav>
+<div class="mob-nav" id="mob-nav">
+  <a href="#business" onclick="closeMob()">事業内容</a>
+  <a href="#spotlight" onclick="closeMob()">地域創生</a>
+  <a href="#sdgs" onclick="closeMob()">SDGs</a>
+  <a href="#company" onclick="closeMob()">会社概要</a>
+  <a href="#contact" onclick="closeMob()">お問い合わせ</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="orb orb3"></div>
+
+  <div class="badge">Sustainable × Technology × Regional Revitalization</div>
+
+  <h1 class="hero-h">
+    日本の原風景と<em>未来技術</em>で、<br>
+    持続可能な社会を再生する。
+  </h1>
+
+  <p class="hero-sub">
+    車中泊インフラの整備から、再生可能エネルギーの地産地消、古民家・空き家の蘇生、<br>
+    遊休資産の再活用まで——RESEは「もったいない」を価値に変える会社です。
+  </p>
+
+  <div class="hero-acts">
+    <a href="#business" class="btn-p">事業内容を見る &rarr;</a>
+    <a href="#contact" class="btn-s">お問い合わせ</a>
+  </div>
+
+  <div class="hero-chips">
+    <span class="chip">🚐 車中泊インフラ</span>
+    <span class="chip">☀️ 新エネルギー</span>
+    <span class="chip">🌱 SDGs推進</span>
+    <span class="chip">🏯 古民家再生</span>
+    <span class="chip">🏠 空き家活用</span>
+    <span class="chip">💰 資産再活用</span>
+    <span class="chip">🤖 AI・DX</span>
+  </div>
+</section>
+
+<!-- BUSINESS -->
+<section id="business">
+  <div class="inner">
+    <div class="rev">
+      <p class="eyebrow">Core Business</p>
+      <h2 class="sec-title">5つの事業領域</h2>
+      <p class="sec-desc">RESEは「テクノロジー」と「サステナビリティ」を軸に、日本の地域が抱える課題を、ビジネスとして解決します。</p>
+    </div>
+    <div class="biz-grid">
+
+      <!-- 01 -->
+      <div class="biz-card">
+        <div class="card-icon ic1">🚐</div>
+        <div class="card-no">Business 01</div>
+        <h3 class="card-title">車中泊インフラ整備事業</h3>
+        <p class="card-desc">
+          急増するバンライフ・車中泊人口に対応した、次世代モビリティ休憩拠点の設計・開発・運営を行います。
+          太陽光発電による無料充電スタンド、Wi-Fi、シャワー設備を備えたRESEオリジナルの車中泊スポットを、
+          全国の遊休地・道の駅・古民家敷地に展開。旅人と地域をつなぐ「滞在型交流拠点」を創出します。
+        </p>
+        <div class="card-tags">
+          <span class="tag te">モビリティ</span>
+          <span class="tag tg">地域交流</span>
+          <span class="tag tg">遊休地活用</span>
+        </div>
+      </div>
+
+      <!-- 02 -->
+      <div class="biz-card">
+        <div class="card-icon ic2">☀️</div>
+        <div class="card-no">Business 02</div>
+        <h3 class="card-title">新エネルギー・<br>再生可能エネルギー事業</h3>
+        <p class="card-desc">
+          オフグリッド型太陽光発電システムと蓄電池の設計・施工・保守を行います。
+          農村部・山間部の電力インフラ整備から、企業・施設の脱炭素化支援まで幅広く対応。
+          AI制御による発電量最適化と、余剰電力の地域シェアリングを実現し、
+          エネルギーの自給自足コミュニティの形成をご支援します。
+        </p>
+        <div class="card-tags">
+          <span class="tag tg">太陽光発電</span>
+          <span class="tag tg">蓄電システム</span>
+          <span class="tag tb">AI最適化</span>
+        </div>
+      </div>
+
+      <!-- 03 -->
+      <div class="biz-card">
+        <div class="card-icon ic3">🏯</div>
+        <div class="card-no">Business 03</div>
+        <h3 class="card-title">古民家・空き家<br>再生事業</h3>
+        <p class="card-desc">
+          全国に約900万戸存在する空き家・古民家を、文化的価値を保ちながら現代的用途に甦らせます。
+          宿泊施設（古民家ホテル）、コワーキングスペース、地域コミュニティ拠点など、
+          地域のニーズと資産の特性に合わせた再生プランを企画から施工・運営まで一貫してサポートします。
+        </p>
+        <div class="card-tags">
+          <span class="tag te">古民家活用</span>
+          <span class="tag tp">空き家対策</span>
+          <span class="tag tg">地域文化継承</span>
+        </div>
+      </div>
+
+      <!-- 04 -->
+      <div class="biz-card">
+        <div class="card-icon ic4">🏗️</div>
+        <div class="card-no">Business 04</div>
+        <h3 class="card-title">遊休資産<br>再活用コンサルティング</h3>
+        <p class="card-desc">
+          使われていない土地・建物・設備などの遊休資産を、新たなキャッシュフローを生む事業資産へと転換します。
+          相続した不動産の活用方針策定、農地・山林の事業化支援、企業の未使用設備の流通促進など、
+          資産オーナーの「眠った価値」を掘り起こす総合コンサルティングを提供します。
+        </p>
+        <div class="card-tags">
+          <span class="tag te">資産活用</span>
+          <span class="tag tb">不動産再生</span>
+          <span class="tag tg">事業化支援</span>
+        </div>
+      </div>
+
+      <!-- 05 -->
+      <div class="biz-card">
+        <div class="card-icon ic5">🤖</div>
+        <div class="card-no">Business 05</div>
+        <h3 class="card-title">AI・DX<br>ソリューション事業</h3>
+        <p class="card-desc">
+          カスタムAIエージェントの開発・実装から、エンタープライズLLM統合、
+          インテリジェントRPAによる業務自動化まで、地域企業・行政のデジタル変革を先導します。
+          グローバルな技術力と日本品質を融合させた開発体制で、伝統産業の競争力を次世代水準に引き上げます。
+        </p>
+        <div class="card-tags">
+          <span class="tag tb">AIエージェント</span>
+          <span class="tag tb">LLM統合</span>
+          <span class="tag tg">業務自動化</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SPOTLIGHT -->
+<section id="spotlight">
+  <div class="sp-bg"></div>
+  <div class="inner sp-inner">
+    <div class="rev">
+      <p class="sp-eyebrow">Innovation Spotlight</p>
+      <h2 class="sp-title">古民家が、<br>次世代エネルギー拠点に生まれ変わる。</h2>
+      <p class="sp-desc">
+        廃れた古民家の屋根に太陽光パネルを設置し、蓄電池とAI制御システムを導入。
+        車中泊旅人への充電サービス、地域農業へのエネルギー供給、
+        ワーケーション拠点としての宿泊提供——一軒の空き家が、
+        地域経済を動かすエコシステムの核心となります。
+        これがRESEの「地域創生×新エネルギー×デジタル」統合モデルです。
+      </p>
+      <a href="#contact" class="sp-link">プロジェクトを相談する &rarr;</a>
+    </div>
+    <div class="sp-vis rev" id="vis">
+      <div class="vc">
+        <div class="vc-lbl">再エネ自給率</div>
+        <div class="vc-val" id="vc-re">—</div>
+        <div class="vc-sub">導入拠点平均</div>
+        <div class="vc-bar-w"><div class="vc-bar" id="bar-re" data-w="92"></div></div>
+      </div>
+      <div class="vc">
+        <div class="vc-lbl">空き家再生実績</div>
+        <div class="vc-val" id="vc-ak">—</div>
+        <div class="vc-sub">累計再生物件数</div>
+        <div class="vc-bar-w"><div class="vc-bar" id="bar-ak" data-w="68"></div></div>
+      </div>
+      <div class="vc">
+        <div class="vc-lbl">CO₂削減効果</div>
+        <div class="vc-val" id="vc-co">—</div>
+        <div class="vc-sub">年間推定削減（t-CO₂）</div>
+        <div class="vc-bar-w"><div class="vc-bar" id="bar-co" data-w="76"></div></div>
+      </div>
+      <div class="vc">
+        <div class="vc-lbl">車中泊スポット</div>
+        <div class="vc-val" id="vc-vn">—</div>
+        <div class="vc-sub">整備・運営拠点数</div>
+        <div class="vc-bar-w"><div class="vc-bar" id="bar-vn" data-w="55"></div></div>
+      </div>
+      <div class="vc wide">
+        <div class="vc-lbl">統合モデル概要</div>
+        <div class="vc-val" style="font-size:1rem;font-weight:500;line-height:1.6">古民家 → 太陽光 × 蓄電 × AI → 車中泊 × 農業 × 宿泊</div>
+        <div class="vc-sub" style="margin-top:.4rem">遊休資産を収益化し、地域コミュニティを持続的に活性化するRESEの統合ソリューション</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SDGs -->
+<section id="sdgs">
+  <div class="inner">
+    <div class="rev">
+      <p class="eyebrow">SDGs Commitment</p>
+      <h2 class="sec-title">持続可能な開発目標への貢献</h2>
+      <p class="sec-desc">RESEの全事業は、国連が定めるSDGs（持続可能な開発目標）と深く連動しています。</p>
+    </div>
+    <div class="sdgs-grid">
+      <div class="sdg-item s1 rev">
+        <div class="sdg-num" style="color:#f5a623">07</div>
+        <div class="sdg-name">エネルギーをみんなに そしてクリーンに</div>
+        <p class="sdg-desc">太陽光発電・蓄電システムの普及により、農村部・山間部へのクリーンエネルギーアクセスを拡大します。</p>
+      </div>
+      <div class="sdg-item s2 rev">
+        <div class="sdg-num" style="color:var(--grn)">11</div>
+        <div class="sdg-name">住み続けられる まちづくりを</div>
+        <p class="sdg-desc">古民家・空き家の再生と車中泊インフラ整備を通じ、地方の持続可能な居住環境と交流拠点を創出します。</p>
+      </div>
+      <div class="sdg-item s3 rev">
+        <div class="sdg-num" style="color:var(--sky)">13</div>
+        <div class="sdg-name">気候変動に 具体的な対策を</div>
+        <p class="sdg-desc">再生可能エネルギーへの移行と資産の有効活用により、CO₂排出削減と脱炭素社会の実現に貢献します。</p>
+      </div>
+      <div class="sdg-item s4 rev">
+        <div class="sdg-num" style="color:#e91e8c">08</div>
+        <div class="sdg-name">働きがいも 経済成長も</div>
+        <p class="sdg-desc">地方における新たな雇用創出と、遊休資産のビジネス転換により、地域経済の持続的成長を支援します。</p>
+      </div>
+      <div class="sdg-item s5 rev">
+        <div class="sdg-num" style="color:#8b5cf6">09</div>
+        <div class="sdg-name">産業と技術革新の 基盤をつくろう</div>
+        <p class="sdg-desc">AI・DXソリューションと再エネ技術の融合により、地域産業の技術基盤を近代化し競争力を高めます。</p>
+      </div>
+      <div class="sdg-item s6 rev">
+        <div class="sdg-num" style="color:#00bcd4">17</div>
+        <div class="sdg-name">パートナーシップで 目標を達成しよう</div>
+        <p class="sdg-desc">行政・民間・地域コミュニティと連携した多層的パートナーシップにより、持続可能な地域モデルを構築します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPANY -->
+<section id="company">
+  <div class="inner co-inner">
+    <div class="rev">
+      <p class="eyebrow">Company Profile</p>
+      <h2 class="sec-title">会社概要</h2>
+      <p class="sec-desc">株式会社RESEは、テクノロジーとサステナビリティを軸に、日本の地域資源を再定義するベンチャー企業です。</p>
+      <div class="val-grid" style="margin-top:2rem">
+        <div class="val-card">
+          <div class="val-num">5<sup>事業</sup></div>
+          <div class="val-txt">車中泊・新エネ・古民家・資産活用・AI/DX</div>
+        </div>
+        <div class="val-card">
+          <div class="val-num">RE<sup>100</sup></div>
+          <div class="val-txt">再生可能エネルギー100%を目指す事業設計</div>
+        </div>
+        <div class="val-card">
+          <div class="val-num">SDGs<sup>×</sup></div>
+          <div class="val-txt">6つの目標への貢献を全事業に組み込む</div>
+        </div>
+        <div class="val-card">
+          <div class="val-num">G<sup>×</sup>J</div>
+          <div class="val-txt">グローバル技術力×日本品質×地域密着</div>
+        </div>
+      </div>
+    </div>
+    <div class="co-tbl rev">
+      <table>
+        <tr><th>社名</th><td>株式会社RESE</td></tr>
+        <tr><th>英語表記</th><td>RESE Co., Ltd.</td></tr>
+        <tr><th>設立</th><td>2019年12月9日</td></tr>
+        <tr><th>所在地</th><td>〒630-8113<br>奈良県奈良市法蓮町647-2<br>ホワイトヒル0103号室</td></tr>
+        <tr><th>事業内容</th><td>車中泊インフラ整備 / 再生可能エネルギー導入支援 / 古民家・空き家再生 / 遊休資産再活用コンサルティング / AI・DXソリューション開発</td></tr>
+        <tr><th>SDGs取組</th><td>目標7・8・9・11・13・17に対応する事業を展開</td></tr>
+        <tr><th>開発・連携</th><td>日本・アジア（クロスボーダー体制）</td></tr>
+        <tr><th>対応言語</th><td>日本語 / English / 中文</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="ct-inner">
+    <div class="rev">
+      <p class="eyebrow">Contact</p>
+      <h2 class="sec-title">お問い合わせ</h2>
+      <p class="sec-desc">事業連携・古民家活用相談・エネルギー導入・車中泊スポット開設など、まずはお気軽にご連絡ください。2営業日以内にご回答します。</p>
+    </div>
+    <div class="ct-form rev">
+      <form id="ct-form" novalidate>
+        <div class="row2">
+          <div class="fg"><label>お名前 <span style="color:var(--grn)">*</span></label><input type="text" placeholder="山田 太郎" required></div>
+          <div class="fg"><label>会社名・団体名</label><input type="text" placeholder="株式会社〇〇 / 奈良市"></div>
+        </div>
+        <div class="fg"><label>メールアドレス <span style="color:var(--grn)">*</span></label><input type="email" placeholder="taro@example.co.jp" required></div>
+        <div class="fg">
+          <label>お問い合わせ種別</label>
+          <select>
+            <option value="">選択してください</option>
+            <option>車中泊スポット開設・整備</option>
+            <option>太陽光・再生可能エネルギー導入</option>
+            <option>古民家・空き家の再生活用</option>
+            <option>遊休資産の活用コンサルティング</option>
+            <option>AI・DXソリューション</option>
+            <option>SDGs・サステナビリティ推進</option>
+            <option>その他・資料請求</option>
+          </select>
+        </div>
+        <div class="fg"><label>お問い合わせ内容 <span style="color:var(--grn)">*</span></label><textarea placeholder="物件の所在地、現在の状況、ご要望などをお聞かせください。" required></textarea></div>
+        <button type="submit" class="sub-btn">送信する</button>
+      </form>
+      <div class="form-ok" id="form-ok">
+        ✓ お問い合わせを受け付けました。<br>2営業日以内に担当者よりご連絡いたします。
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <a href="#" class="logo">RESE<span>.</span></a>
+        <p>日本の原風景と未来技術で、持続可能な社会を再生する。</p>
+      </div>
+      <div class="ft-col">
+        <h4>事業内容</h4>
+        <ul>
+          <li><a href="#business">車中泊インフラ整備</a></li>
+          <li><a href="#business">新エネルギー事業</a></li>
+          <li><a href="#business">古民家・空き家再生</a></li>
+          <li><a href="#business">遊休資産再活用</a></li>
+          <li><a href="#business">AI・DXソリューション</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h4>取り組み</h4>
+        <ul>
+          <li><a href="#sdgs">SDGsへの貢献</a></li>
+          <li><a href="#spotlight">地域創生モデル</a></li>
+          <li><a href="#company">会社概要</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h4>お問い合わせ</h4>
+        <ul>
+          <li><a href="#contact">事業連携・相談</a></li>
+          <li><a href="#contact">古民家・空き家相談</a></li>
+          <li><a href="#contact">資料請求</a></li>
+          <li><a href="#contact">採用情報</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-btm">
+      <p>&copy; 2026 株式会社RESE All rights reserved.</p>
+      <div class="ft-langs">
+        <a href="#">日本語</a>
+        <a href="#">English</a>
+        <a href="#">中文</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Mobile nav
+document.getElementById('ham').addEventListener('click',()=>document.getElementById('mob-nav').classList.toggle('open'));
+function closeMob(){document.getElementById('mob-nav').classList.remove('open')}
+
+// Scroll reveal
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting) e.target.classList.add('vis');
+  });
+},{threshold:0.12});
+document.querySelectorAll('.rev').forEach(el=>io.observe(el));
+
+// Card stagger
+const co = new IntersectionObserver(entries=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting) setTimeout(()=>e.target.classList.add('vis'),i*110);
+  });
+},{threshold:0.08});
+document.querySelectorAll('.biz-card').forEach(c=>co.observe(c));
+
+// Spotlight counters + bars
+const vo = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(!e.isIntersecting) return;
+    e.target.querySelectorAll('.vc-bar').forEach(b=>b.style.width=b.dataset.w+'%');
+    setTimeout(()=>{
+      document.getElementById('vc-re').textContent='92%';
+      document.getElementById('vc-ak').textContent='47棟';
+      document.getElementById('vc-co').textContent='1,240t';
+      document.getElementById('vc-vn').textContent='23拠点';
+    },400);
+    vo.unobserve(e.target);
+  });
+},{threshold:0.2});
+const vis=document.getElementById('vis');
+if(vis) vo.observe(vis);
+
+// Contact form
+document.getElementById('ct-form').addEventListener('submit',function(e){
+  e.preventDefault();
+  this.style.display='none';
+  document.getElementById('form-ok').style.display='block';
+});
+</script>
+</body>
+</html>
