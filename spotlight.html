@@ -14,7 +14,7 @@
 <nav>
 <a href="index.html" class="logo">RESE<span>.</span></a>
 <ul class="nav-links"><li><a href="index.html">ホーム</a></li><li><a href="business.html">事業内容</a></li><li><a href="spotlight.html" class="cur">地域創生</a></li><li><a href="sdgs.html">SDGs</a></li><li><a href="company.html">会社概要</a></li></ul>
-<a href="contact.html" class="nav-btn">お問い合わせ</a>
+<div class="lang-switch" style="display:flex;gap:.45rem;align-items:center;font-size:.75rem;white-space:nowrap;margin:0 .6rem"><a href="spotlight.html" data-lang="ja" onclick="localStorage.setItem('rese-lang','ja')" style="font-weight:700;color:#1d1d1f;text-decoration:none">日本語</a><span style="color:#d2d2d7">|</span><a href="en/spotlight.html" data-lang="en" onclick="localStorage.setItem('rese-lang','en')" style="color:#515154;text-decoration:none">English</a><span style="color:#d2d2d7">|</span><a href="zh/spotlight.html" data-lang="zh" onclick="localStorage.setItem('rese-lang','zh')" style="color:#515154;text-decoration:none">中文</a></div><a href="contact.html" class="nav-btn">お問い合わせ</a>
 <button class="ham" id="ham" aria-label="メニュー"><span></span><span></span><span></span></button>
 </nav>
 <div class="mob-nav" id="mob-nav"><a href="index.html" onclick="closeMob()">ホーム</a><a href="business.html" onclick="closeMob()">事業内容</a><a href="spotlight.html" onclick="closeMob()">地域創生</a><a href="sdgs.html" onclick="closeMob()">SDGs</a><a href="company.html" onclick="closeMob()">会社概要</a><a href="contact.html" onclick="closeMob()">お問い合わせ</a></div>
@@ -64,5 +64,6 @@
 </div>
 </footer>
 <script src="script.js"></script>
+<script src="i18n.js"></script>
 </body>
 </html>

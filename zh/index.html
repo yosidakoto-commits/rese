@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>株式会社RESE | 以日本的原始风景与未来技术，重塑可持续社会。</title>
+<meta name="description" content="株式会社RESE的官方网站——通过车中泊基础设施建设、可再生能源引进、推进SDGs、古民居与空置房再生和资产再利用，为地区和社会创造可持续的未来。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+<a href="index.html" class="logo">RESE<span>.</span></a>
+<ul class="nav-links"><li><a href="index.html" class="cur">首页</a></li><li><a href="business.html">业务内容</a></li><li><a href="spotlight.html">区域创生</a></li><li><a href="sdgs.html">SDGs</a></li><li><a href="company.html">公司概要</a></li></ul>
+<div class="lang-switch" style="display:flex;gap:.45rem;align-items:center;font-size:.75rem;white-space:nowrap;margin:0 .6rem"><a href="../index.html" data-lang="ja" onclick="localStorage.setItem('rese-lang','ja')" style="color:#515154;text-decoration:none">日本語</a><span style="color:#d2d2d7">|</span><a href="../en/index.html" data-lang="en" onclick="localStorage.setItem('rese-lang','en')" style="color:#515154;text-decoration:none">English</a><span style="color:#d2d2d7">|</span><a href="index.html" data-lang="zh" onclick="localStorage.setItem('rese-lang','zh')" style="font-weight:700;color:#1d1d1f;text-decoration:none">中文</a></div><a href="contact.html" class="nav-btn">联系我们</a>
+<button class="ham" id="ham" aria-label="菜单"><span></span><span></span><span></span></button>
+</nav>
+<div class="mob-nav" id="mob-nav"><a href="index.html" onclick="closeMob()">首页</a><a href="business.html" onclick="closeMob()">业务内容</a><a href="spotlight.html" onclick="closeMob()">区域创生</a><a href="sdgs.html" onclick="closeMob()">SDGs</a><a href="company.html" onclick="closeMob()">公司概要</a><a href="contact.html" onclick="closeMob()">联系我们</a></div>
+
+<section class="hero">
+<div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div>
+<div class="badge">Sustainable × Technology × Regional Revitalization</div>
+<h1>以日本的原始风景与<em>未来技术</em>，<br>重塑可持续社会。</h1>
+<p class="sub">从车中泊基础设施建设、可再生能源的就地生产与消费，到古民居与空置房的重生、闲置资产的再利用——RESE是一家将“浪费可惜”转化为价值的公司。</p>
+<div class="acts"><a href="business.html" class="btn-p">查看业务内容</a><a href="contact.html" class="link-arrow">联系我们</a></div>
+</section>
+<section style="padding-top:0">
+<div class="tiles">
+<a class="tile black wide" href="spotlight.html"><div class="t-eyebrow">Innovation Spotlight</div><h3>古民家，蜕变为新一代<br>能源枢纽。</h3><p>太阳能 × 储能 × AI。一栋空置房，成为驱动地区经济的生态核心——这就是RESE的区域创生模式。</p><span class="more">查看区域创生模式 ›</span></a>
+<a class="tile grey" href="carstay.html"><div class="t-eyebrow">Business 01</div><h3>车中泊基础设施</h3><p>配备充电、Wi-Fi和淋浴的新一代停留型交流据点。</p><span class="more">了解更多 ›</span></a>
+<a class="tile grey" href="energy.html"><div class="t-eyebrow">Business 02</div><h3>新能源</h3><p>以离网型太阳能发电和储能，实现能源的本地生产与本地消费。</p><span class="more">了解更多 ›</span></a>
+<a class="tile grey" href="kominka.html"><div class="t-eyebrow">Business 03</div><h3>古民居与空置房再生</h3><p>让约900万户空置房，作为酒店和据点重生。</p><span class="more">了解更多 ›</span></a>
+<a class="tile grey" href="ai-dx.html"><div class="t-eyebrow">Business 05</div><h3>AI与DX</h3><p>以AI智能体和LLM集成，引领地区企业的变革。</p><span class="more">了解更多 ›</span></a>
+</div>
+</section>
+<section class="bg-grey">
+<div class="inner"><p class="eyebrow">Core Business</p><h2 class="sec">五大业务领域</h2><p class="sec-desc">RESE以“技术”和“可持续”为核心，将日本地区面临的课题作为业务来解决。我们为每项业务都准备了详情页面。</p>
+<div class="cards"><a class="card rev" href="carstay.html"><div class="no">Business 01</div><h3>车中泊基础设施建设业务</h3><p>新一代出行休憩据点的设计、开发与运营。</p><span class="more">了解更多 ›</span></a><a class="card rev" href="energy.html"><div class="no">Business 02</div><h3>新能源与可再生能源业务</h3><p>离网型太阳能发电与储能的设计、施工与维护。</p><span class="more">了解更多 ›</span></a><a class="card rev" href="kominka.html"><div class="no">Business 03</div><h3>传统民居与空置房屋再生业务</h3><p>在保留文化价值的同时，让它以现代用途重生。</p><span class="more">了解更多 ›</span></a><a class="card rev" href="assets.html"><div class="no">Business 04</div><h3>闲置资产再利用咨询</h3><p>将沉睡的资产，转化为产生新现金流的经营资产。</p><span class="more">了解更多 ›</span></a><a class="card rev" href="ai-dx.html"><div class="no">Business 05</div><h3>AI与DX解决方案业务</h3><p>从AI智能体开发、LLM集成到业务自动化。</p><span class="more">了解更多 ›</span></a></div>
+<p style="text-align:center;margin-top:2.2rem"><a class="link-arrow" href="business.html">查看全部业务</a></p></div>
+</section>
+<section class="bg-black">
+<div class="inner"><p class="eyebrow" style="color:#30d158">Impact</p><h2 class="sec">用数字看RESE</h2><p class="sec-desc">这是各引进据点的实绩与成效。</p>
+<div class="stats">
+<div class="stat"><div class="v">92%</div><div class="l">可再生能源自给率<br>各引进据点平均</div></div>
+<div class="stat"><div class="v">47栋</div><div class="l">空置房再生实绩<br>累计再生物业数量</div></div>
+<div class="stat"><div class="v">1,240t</div><div class="l">CO₂减排成效<br>年预计减排量（t-CO₂）</div></div>
+<div class="stat"><div class="v">23个据点</div><div class="l">车中泊据点<br>已建设与运营的据点数量</div></div>
+</div>
+<p style="text-align:center;margin-top:2.2rem"><a class="link-arrow" style="color:#2997ff" href="spotlight.html">查看举措详情</a></p></div>
+</section>
+<section>
+<div class="tiles">
+<a class="tile grey" href="sdgs.html"><div class="t-eyebrow">SDGs</div><h3>贡献六大目标</h3><p>RESE的所有业务都与联合国的可持续发展目标紧密相连。</p><span class="more">查看SDGs举措 ›</span></a>
+<a class="tile green" href="company.html"><div class="t-eyebrow">Company</div><h3>公司概要</h3><p>以奈良为据点，以全球技术实力 × 日本品质 × 立足本地开展业务。</p><span class="more">查看公司信息 ›</span></a>
+</div>
+</section>
+<section class="cta" style="padding-top:0">
+<div class="inner"><h2 class="sec">先从咨询开始吧。</h2><p class="sec-desc">业务合作、古民居利用咨询、能源引进、开设车中泊据点等，欢迎随时与我们联系。我们将在2个工作日内回复。</p>
+<div class="acts"><a href="contact.html" class="btn-p">联系我们</a><a href="company.html" class="link-arrow">查看公司概要</a></div></div>
+</section>
+
+<footer>
+<div class="ft-inner">
+<div class="ft-top">
+<div class="ft-brand"><a href="index.html" class="logo">RESE<span>.</span></a><p>以日本的原始风景与未来技术，重塑可持续社会。</p></div>
+<div><h4>业务内容</h4><ul>
+<li><a href="carstay.html">车中泊基础设施建设</a></li>
+<li><a href="energy.html">新能源业务</a></li>
+<li><a href="kominka.html">古民居与空置房再生</a></li>
+<li><a href="assets.html">闲置资产再利用</a></li>
+<li><a href="ai-dx.html">AI与DX解决方案</a></li>
+</ul></div>
+<div><h4>举措</h4><ul>
+<li><a href="business.html">业务一览</a></li>
+<li><a href="spotlight.html">区域创生模式</a></li>
+<li><a href="sdgs.html">对SDGs的贡献</a></li>
+<li><a href="company.html">公司概要</a></li>
+</ul></div>
+<div><h4>联系我们</h4><ul>
+<li><a href="contact.html">业务合作与咨询</a></li>
+<li><a href="contact.html?type=古民居与空置房的再利用">古民居与空置房咨询</a></li>
+<li><a href="contact.html?type=其他 / 资料索取">资料索取</a></li>
+</ul></div>
+</div>
+<div class="ft-btm"><p>&copy; 2026 株式会社RESE All rights reserved.</p><p>提供日语 / English / 中文服务</p></div>
+</div>
+</footer>
+<script src="script.js"></script>
+<script src="i18n.js"></script>
+</body>
+</html>
