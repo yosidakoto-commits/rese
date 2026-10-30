@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>お問い合わせ | 株式会社RESE</title>
+<meta name="description" content="株式会社RESEへのお問い合わせフォーム。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+<a href="index.html" class="logo">RESE<span>.</span></a>
+<ul class="nav-links"><li><a href="index.html">ホーム</a></li><li><a href="business.html">事業内容</a></li><li><a href="spotlight.html">地域創生</a></li><li><a href="sdgs.html">SDGs</a></li><li><a href="company.html">会社概要</a></li></ul>
+<a href="contact.html" class="nav-btn">お問い合わせ</a>
+<button class="ham" id="ham" aria-label="メニュー"><span></span><span></span><span></span></button>
+</nav>
+<div class="mob-nav" id="mob-nav"><a href="index.html" onclick="closeMob()">ホーム</a><a href="business.html" onclick="closeMob()">事業内容</a><a href="spotlight.html" onclick="closeMob()">地域創生</a><a href="sdgs.html" onclick="closeMob()">SDGs</a><a href="company.html" onclick="closeMob()">会社概要</a><a href="contact.html" onclick="closeMob()">お問い合わせ</a></div>
+
+<div class="crumbs"><a href="index.html">ホーム</a> › お問い合わせ</div>
+<section class="hero small"><div class="badge">Contact</div><h1>お問い合わせ</h1><p class="sub">事業連携・古民家活用相談・エネルギー導入・車中泊スポット開設など、まずはお気軽にご連絡ください。2営業日以内にご回答します。</p></section>
+<section style="padding-top:0">
+<form id="ct-form" novalidate>
+<div class="row2">
+<div class="fg"><label>お名前 *</label><input type="text" placeholder="山田 太郎" required></div>
+<div class="fg"><label>会社名・団体名</label><input type="text" placeholder="株式会社〇〇 / 奈良市"></div>
+</div>
+<div class="fg"><label>メールアドレス *</label><input type="email" placeholder="taro@example.co.jp" required></div>
+<div class="fg"><label>お問い合わせ種別</label><select id="ct-type"><option value="">選択してください</option><option>車中泊スポット開設・整備</option><option>太陽光・再生可能エネルギー導入</option><option>古民家・空き家の再生活用</option><option>遊休資産の活用コンサルティング</option><option>AI・DXソリューション</option><option>SDGs・サステナビリティ推進</option><option>その他・資料請求</option></select></div>
+<div class="fg"><label>お問い合わせ内容 *</label><textarea placeholder="物件の所在地、現在の状況、ご要望などをお聞かせください。" required></textarea></div>
+<button type="submit" class="sub-btn">送信する</button>
+</form>
+<div class="form-ok" id="form-ok">✓ お問い合わせを受け付けました。<br>2営業日以内に担当者よりご連絡いたします。</div>
+<p style="text-align:center;margin-top:2rem;font-size:.85rem;color:var(--g4)">相談内容が決まっていない方は、<a href="business.html">事業内容</a>や<a href="spotlight.html">地域創生モデル</a>のページもご覧ください。</p>
+</section>
+
+<footer>
+<div class="ft-inner">
+<div class="ft-top">
+<div class="ft-brand"><a href="index.html" class="logo">RESE<span>.</span></a><p>日本の原風景と未来技術で、持続可能な社会を再生する。</p></div>
+<div><h4>事業内容</h4><ul>
+<li><a href="carstay.html">車中泊インフラ整備</a></li>
+<li><a href="energy.html">新エネルギー事業</a></li>
+<li><a href="kominka.html">古民家・空き家再生</a></li>
+<li><a href="assets.html">遊休資産再活用</a></li>
+<li><a href="ai-dx.html">AI・DXソリューション</a></li>
+</ul></div>
+<div><h4>取り組み</h4><ul>
+<li><a href="business.html">事業内容一覧</a></li>
+<li><a href="spotlight.html">地域創生モデル</a></li>
+<li><a href="sdgs.html">SDGsへの貢献</a></li>
+<li><a href="company.html">会社概要</a></li>
+</ul></div>
+<div><h4>お問い合わせ</h4><ul>
+<li><a href="contact.html">事業連携・相談</a></li>
+<li><a href="contact.html?type=古民家・空き家の再生活用">古民家・空き家相談</a></li>
+<li><a href="contact.html?type=その他・資料請求">資料請求</a></li>
+</ul></div>
+</div>
+<div class="ft-btm"><p>&copy; 2026 株式会社RESE All rights reserved.</p><p>日本語 / English / 中文 対応</p></div>
+</div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
